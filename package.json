@@ -1,0 +1,23 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe app",
+  "default": "index.html",
+  "license": "ISC",
+  "author": "Jatin Paridal",
+  "type": "commonjs",
+  "scripts": {
+    "start": "rm -rf dist .parcel-cache && parcel serve index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.15.0",
+    "parcel": "^2.15.0",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "core-js": "^3.42.0",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.14.1"
+  }
+}
