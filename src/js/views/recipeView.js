@@ -77,16 +77,14 @@ class RecipeView extends View {
           </div>
 
           <div class="recipe__user-generated">
-            <svg>
-              <use href="${icons}#${this._data.key ? 'icon-user' : ''}"></use>
-            </svg>
+            ${
+              this._data.key ? '<span class="material-icons">person</span>' : ''
+            }
           </div>
           <button class="btn--round btn--bookmark">
-            <svg class="">
-              <use href="${icons}#icon-bookmark${
-      this._data.bookmarked ? '-fill' : ''
-    }"></use>
-            </svg>
+            <span class="material-icons">${
+              this._data.bookmarked ? 'bookmark' : 'bookmark_border'
+            }</span>
           </button>
         </div>
 
@@ -114,9 +112,7 @@ class RecipeView extends View {
             target="_blank"
           >
             <span>Directions</span>
-            <svg class="search__icon">
-              <use href="${icons}#icon-arrow-right"></use>
-            </svg>
+            <span class="material-icons search__icon">arrow_forward</span>
           </a>
         </div>
     `;
@@ -125,9 +121,7 @@ class RecipeView extends View {
   _generateMarkupIngredients(ing) {
     return `
             <li class="recipe__ingredient">
-              <svg class="recipe__icon">
-              <use href="${icons}#icon-check"></use>
-              </svg>
+              <span class="material-icons recipe__icon">check</span>
               <div class="recipe__quantity">${
                 ing.quantity == null || 0 ? '' : Math.ceil(ing.quantity)
               }</div>

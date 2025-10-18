@@ -7,8 +7,8 @@
   "author": "Jatin Paridal",
   "type": "commonjs",
   "scripts": {
-    "start": "del /s /q dist .parcel-cache 2>nul && parcel serve index.html",
-    "build": "del /s /q dist .parcel-cache 2>nul && parcel build index.html --dist-dir ./dist"
+    "start": "rm -rf dist .parcel-cache && parcel serve index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.15.0",

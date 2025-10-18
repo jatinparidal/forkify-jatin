@@ -9,19 +9,6 @@ import { MODAL_CLOSE_SEC } from './config.js';
 
 import 'regenerator-runtime/runtime'; // polyfilling async/await
 import 'core-js/stable'; // polyfilling everything else
-import { updateIconPaths } from './utils/iconUtils.js';
-
-// updateIconPaths is now imported from iconUtils.js
-
-import icons from 'url:../img/icons.svg';
-
-// Update icon paths
-const updateIcons = function () {
-  document.querySelectorAll('.js-icon').forEach(icon => {
-    const iconName = icon.dataset.icon;
-    icon.setAttribute('href', `${icons}#${iconName}`);
-  });
-};
 
 // https://forkify-api.herokuapp.com/v2
 
@@ -167,7 +154,6 @@ const controlAddRecipe = async function (newRecipe) {
 };
 
 const init = function () {
-  updateIcons();
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipe);
   recipeView.addHandlerUpdateServings(controlServings);
